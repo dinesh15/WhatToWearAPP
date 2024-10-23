@@ -1,6 +1,3 @@
-Here’s an updated **README** that includes instructions for both **OpenAI** and **Llama** integration using the **Ollama** library. The changes include information about hosting Llama on your server and switching between AI models.
-
-```markdown
 # 🌦️ What to Wear - Weather-based Clothing Suggestion App
 
 ## 🚀 Overview
@@ -171,6 +168,4 @@ Feel free to open issues or submit pull requests. Any feedback and contributions
 
 ### 📞 Contact
 If you have any questions or suggestions, feel free to reach out!
-```
 
-This updated README now provides details for both **OpenAI** and **Llama** integration, making it easier for other developers to understand how to switch between the two models. It also includes the necessary configurations and steps to run the application with either of the AI models. Let me know if there are any further adjustments you'd like!
