@@ -1,20 +1,25 @@
+Here’s an updated **README** that includes instructions for both **OpenAI** and **Llama** integration using the **Ollama** library. The changes include information about hosting Llama on your server and switching between AI models.
+
+```markdown
 # 🌦️ What to Wear - Weather-based Clothing Suggestion App
 
 ## 🚀 Overview
-**What to Wear** is an AI-powered application that helps users decide what to wear based on real-time weather data. This project uses **Spring Boot** and **Spring AI** to fetch weather forecasts and generate personalized clothing suggestions for different parts of the day (morning, afternoon, and evening). The application integrates with the **OpenWeather API** to retrieve weather data and uses **AI** to offer recommendations tailored to the specific forecast conditions.
+**What to Wear** is an AI-powered application that helps users decide what to wear based on real-time weather data. This project uses **Spring Boot** with **Spring AI** to fetch weather forecasts and generate personalized clothing suggestions for different parts of the day (morning, afternoon, and evening). The application integrates with the **OpenWeather API** to retrieve weather data and uses **AI** models like **OpenAI** or **Llama** to offer recommendations tailored to specific forecast conditions.
 
 ## 🔧 Tech Stack
 - **Spring Boot**: Backend framework for building the core logic.
 - **Spring AI**: Integrates AI to provide intelligent clothing suggestions.
 - **OpenWeather API**: Provides real-time 5-day/3-hour weather forecasts.
 - **RestTemplate**: For handling HTTP requests to fetch weather data.
-- **Maven**: Dependency and project management.
+- **Ollama**: For hosting and managing the **Llama 3.2** model.
 - **Java 17**: Core language used for development.
+- **Maven**: Dependency and project management.
 
 ## ✨ Features
 - **Real-time weather forecasts**: Fetches weather data for any location on the globe.
 - **AI-powered clothing suggestions**: Generates recommendations based on weather conditions like temperature, rain, and cloud coverage.
 - **Day segmentation**: Splits the day into morning, afternoon, and evening, with clothing suggestions for each part of the day.
+- **Support for Multiple AI Models**: Integrate either **OpenAI** or **Llama** models for generating recommendations.
 - **Customizable prompts**: Modify AI prompts to fine-tune suggestions based on specific user preferences.
 
 ## 🛠️ Installation
@@ -23,6 +28,7 @@
 - **Java 17** or higher
 - **Maven**
 - **OpenWeather API key**: You’ll need an API key from OpenWeather to fetch weather data. You can sign up for free and obtain an API key from [OpenWeather](https://home.openweathermap.org/users/sign_up).
+- **AI Model**: Either **OpenAI** API Key or **Llama 3.2** hosted using **Ollama**.
 
 ### Clone the Repository
 ```bash
@@ -31,15 +37,25 @@ cd what-to-wear
 ```
 
 ### Configure API Keys
-Add your **OpenWeather API Key** and **AI API Key** to the `application.properties` file:
+Add your **OpenWeather API Key** and configure either **OpenAI** or **Llama** settings in the `application.properties` file:
 
+#### For OpenAI:
 ```properties
 # OpenWeather API
 openweather.api.key=your_openweather_api_key
 
-# AI API
+# OpenAI API
 ai.api.url=https://api.openai.com/v1/completions  # Example for OpenAI API
-ai.api.key=your_ai_api_key
+ai.api.key=your_openai_api_key
+```
+
+#### For Llama using Ollama:
+```properties
+# OpenWeather API
+openweather.api.key=your_openweather_api_key
+
+# Llama API
+ai.api.url=http://localhost:11434/completions  # Assuming Llama is running on this port
 ```
 
 ### Build the Project
@@ -98,7 +114,7 @@ GET http://localhost:8080/whatToWear?lat=40.7128&lon=-74.0060
    
 2. **Format Weather Data**: The weather forecast is split into three parts of the day—morning, afternoon, and evening.
 
-3. **AI Clothing Suggestions**: The formatted weather data is passed to the AI model (e.g., GPT) to generate clothing suggestions tailored to the weather conditions.
+3. **AI Clothing Suggestions**: The formatted weather data is passed to the AI model (**OpenAI** or **Llama**) to generate clothing suggestions tailored to the weather conditions.
 
 4. **Response**: The AI-generated suggestions are returned to the user, advising on what to wear during each part of the day based on temperature, precipitation, cloud cover, and other weather factors.
 
@@ -155,3 +171,6 @@ Feel free to open issues or submit pull requests. Any feedback and contributions
 
 ### 📞 Contact
 If you have any questions or suggestions, feel free to reach out!
+```
+
+This updated README now provides details for both **OpenAI** and **Llama** integration, making it easier for other developers to understand how to switch between the two models. It also includes the necessary configurations and steps to run the application with either of the AI models. Let me know if there are any further adjustments you'd like!
