@@ -30,8 +30,9 @@ public class ClothingSuggestion {
 
         SystemMessage systemMessage = new SystemMessage("Given the weather forecast suggest me what should I wear in detailed for each time of the day from morning to evening as provided");
         UserMessage userMessage = new UserMessage(template);
+//        System.out.println((chatClient.prompt(new Prompt(new UserMessage("hi"))).call().content()));
         Prompt prompt = new Prompt(List.of(systemMessage,userMessage));
-
+        System.out.println("I am here");
         return chatClient.prompt(prompt).call().content();
     }
 }

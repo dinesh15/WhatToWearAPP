@@ -35,6 +35,7 @@ public class MainController {
         System.out.println("lat=" + lat + ", lng=" + lon);
         WeatherResponse weatherResponse = weatherService.weatherData(lat,lon);
         Map<String, Map<String, List<WeatherForecast>>> formattedForecast = weatherFormattingService.formatWeatherForecast(weatherResponse.list());
+        System.out.println("Formatted the response of size " + formattedForecast.size());
         String formattedForGPT = weatherFormattingService.formatForGPT(formattedForecast);
         return clothingSuggestion.whatToWear(formattedForGPT);
     }

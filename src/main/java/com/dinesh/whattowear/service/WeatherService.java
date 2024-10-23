@@ -28,7 +28,7 @@ public class WeatherService {
         WeatherResponse weatherResponse = restTemplate.getForObject(uri, WeatherResponse.class);
         System.out.println("hi");
 //        System.out.println(restTemplateForObject);
-        System.out.println(weatherResponse);
+//        System.out.println(weatherResponse);
         return weatherResponse;
     }
 }
